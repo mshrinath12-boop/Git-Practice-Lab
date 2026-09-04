@@ -5,6 +5,8 @@ on:
 jobs:
   hello:
     runs-on: ubuntu-latest
-    steps:
+    steps: 
+      - name: Checkout repository
+        uses: action/checkout@v4
       - name: Say hello
         run: echo "Hello from Github Actions"
