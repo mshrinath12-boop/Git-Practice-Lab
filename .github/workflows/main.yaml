@@ -8,5 +8,11 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Inspect Runner
+        run: |
+          pwd
+          ls
+          python --version
+
       - name: Say hello
         run: echo "Hello from Github Actions"
