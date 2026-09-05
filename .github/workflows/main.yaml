@@ -8,11 +8,24 @@ jobs:
     steps: 
       - name: Checkout repository
         uses: actions/checkout@v4
+      - name: Set up python
+        uses:  actions/setup-python@v5  
+        with:
+          python-version: 3.12
+      - name: Check python Version    
+        run: python --version
+      - name:  Install Dependencies
+        run: pip install -r requirements.txt
+      - name: Run Tests
+        run : python test.py
+
+
+      
       - name: Inspect Runner
         run: |
           pwd
           ls
-          python --version
+     
 
       - name: Say hello
         run: echo "Hello from Github Actions"
