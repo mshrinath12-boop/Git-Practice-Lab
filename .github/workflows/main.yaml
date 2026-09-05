@@ -22,6 +22,7 @@ jobs:
 
       
       - name: Inspect Runner
+        if: always()
         run: |
           pwd
           ls
