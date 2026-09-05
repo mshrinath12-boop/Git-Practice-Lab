@@ -14,10 +14,21 @@ jobs:
           python-version: 3.12
       - name: Check python Version    
         run: python --version
+      - name: Show Environment
+        env:
+         ENVIROMENT: production
+        run: echo "$ENVIRONMENT"
       - name:  Install Dependencies
         run: pip install -r requirements.txt
       - name: Run Tests
         run : python test.py
+      - name: Generate Test Reports
+        run: echo "Test Passed Successfully" > test-report.txt  
+      - name: Upload Test reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-report
+          path: test-report.txt
 
 
       
