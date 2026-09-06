@@ -16,7 +16,7 @@ jobs:
         run: python --version
       - name: Show Environment
         env:
-         ENVIROMENT: production
+         ENVIRONMENT: production
         run: echo "$ENVIRONMENT"
       - name:  Install Dependencies
         run: pip install -r requirements.txt
@@ -41,3 +41,15 @@ jobs:
 
       - name: Say hello
         run: echo "Hello from Github Actions"
+  report: 
+  needs: hello
+  runs-on: ubuntu-latest
+  steps:
+    - name: Download Test Reports
+      uses: actions/download-artifact@v5
+      with:
+        name: test-report
+    - name: Inspect Download Artifacts
+      run: |
+       ls  
+       pwd  
