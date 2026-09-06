@@ -19,7 +19,7 @@ jobs:
         with:
            path: ~/.cache/pip
            key: ubuntu-latest-python-3.12-${{ hashFiles('requirements.txt') }}  
-           restore-key: ubuntu-latest-python-3.12-
+           restore-keys: ubuntu-latest-python-3.12-
       - name: Show Environment
         env:
          ENVIRONMENT: production
