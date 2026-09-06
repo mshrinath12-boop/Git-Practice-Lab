@@ -49,6 +49,7 @@ jobs:
       uses: actions/download-artifact@v5
       with:
         name: test-report
+        path: test-report.txt
     - name: Inspect Download Artifacts
       run: |
        ls  
