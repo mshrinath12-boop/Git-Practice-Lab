@@ -41,16 +41,16 @@ jobs:
 
       - name: Say hello
         run: echo "Hello from Github Actions"
-  report: 
-  needs: hello
-  runs-on: ubuntu-latest
-  steps:
-    - name: Download Test Reports
-      uses: actions/download-artifact@v5
-      with:
-        name: test-report
-        path: test-report.txt
-    - name: Inspect Download Artifacts
-      run: |
-       ls  
-       pwd  
+ report: 
+   needs: hello
+   runs-on: ubuntu-latest
+   steps:
+     - name: Download Test Reports
+       uses: actions/download-artifact@v5
+       with:
+         name: test-report
+         path: test-report.txt
+     - name: Inspect Download Artifacts
+       run: |
+        ls  
+        pwd  
