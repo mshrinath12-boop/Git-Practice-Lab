@@ -54,3 +54,8 @@ jobs:
          run: |
           ls  
           pwd  
+       - name: Cache pip
+         uses: actions/cache@v4
+         with:
+            path: ~/.cache/pip
+            key: ubuntu-latest-python 3.12 ${{ hashFiles('requirements.txt') }}
