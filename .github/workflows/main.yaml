@@ -18,7 +18,7 @@ jobs:
         uses: actions/cache@v4
         with:
            path: ~/.cache/pip
-           key: ubuntu-latest-python-3.12 ${{ hashFiles('requirements.txt') }}  
+           key: ubuntu-latest-python-3.12-${{ hashFiles('requirements.txt') }}  
       - name: Show Environment
         env:
          ENVIRONMENT: production
