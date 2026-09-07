@@ -52,7 +52,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
        - name: Download Test Reports
-         uses: actions/download-artifact@v5
+         uses: actions/download-artifact@v7
          with:
            name: test-report
            path: test-report.txt
