@@ -59,6 +59,9 @@ jobs:
       - name: Checking CI events
         if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}  
         run: echo "CI Event Detected"
+      - name: Checking Non Push Event
+        if: ${{ github.event_name == 'push' ! github.event_name == 'pull_request' }}
+        run: echo "Non-push Event Detected"
   report: 
     needs: hello
     runs-on: ubuntu-latest
