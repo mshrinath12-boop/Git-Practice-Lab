@@ -34,6 +34,10 @@ jobs:
       - name: Test failed
         if: failure()
         run: echo "A Previous step failed"
+      - name: Cleanup after cancel
+        if: cancelled()
+        run: echo "Workflow was cancelled"
+
       - name: Generate Test Reports
         run: echo "Test Passed Successfully" > test-report.txt  
       - name: Upload Test reports
