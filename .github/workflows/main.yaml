@@ -47,6 +47,9 @@ jobs:
 
       - name: Say hello
         run: echo "Hello from Github Actions- Cache Test"
+      - name: Deciding Contexts
+        if: ${{ github.ref == 'refs/heads/main' }}
+        run: echo "Running on the main branch"  
   report: 
     needs: hello
     runs-on: ubuntu-latest
