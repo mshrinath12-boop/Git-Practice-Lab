@@ -31,6 +31,9 @@ jobs:
       - name: Test Successfull
         if: success()
         run: echo "All Previous steps succeeded"  
+      - name: Test failed
+        if: failure()
+        run: echo "A Previous step failed"
       - name: Generate Test Reports
         run: echo "Test Passed Successfully" > test-report.txt  
       - name: Upload Test reports
