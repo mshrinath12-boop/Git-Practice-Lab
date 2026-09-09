@@ -56,6 +56,9 @@ jobs:
       - name: Checking events and main
         if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
         run: echo "Push on main branch"
+      - name: Checking CI events
+        if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}  
+        run: echo "CI Event Detected"
   report: 
     needs: hello
     runs-on: ubuntu-latest
