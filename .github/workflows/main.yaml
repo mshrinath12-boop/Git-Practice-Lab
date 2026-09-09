@@ -53,6 +53,9 @@ jobs:
       - name: Checking Event 
         if: ${{ github.event_name == 'push' }} 
         run: echo "Push event Trigerred the workflow" 
+      - name: Checking events and main
+        if: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' }}
+        run: echo "Push on main branch"
   report: 
     needs: hello
     runs-on: ubuntu-latest
