@@ -37,6 +37,11 @@ jobs:
       - name: Cleanup after cancel
         if: cancelled()
         run: echo "Workflow was cancelled"
+      - name: Generate Version
+        id: version
+        run: echo "version=3.6" >> "$Github_OUTPUT"
+      - name: Show Version
+        run: echo "${{ steps.version.outputs.version }}"  
 
       - name: Generate Test Reports
         run: echo "Test Passed Successfully" > test-report.txt  
