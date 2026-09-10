@@ -39,7 +39,7 @@ jobs:
         run: echo "Workflow was cancelled"
       - name: Generate Version
         id: version
-        run: echo "version=3.6" >> "$Github_OUTPUT"
+        run: echo "version=3.6" >> "$GITHUB_OUTPUT"
       - name: Show Version
         run: echo "${{ steps.version.outputs.version }}"  
 
